@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+    <form action="form.php" method="post" id="myForm">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <label for="mail">E-mail:</label>
+            <input type="text" id="mail">
+        </div>
+        <div>
+            <label for="msg">Message:</label>
+            <textarea id="msg"></textarea>
+        </div>
+
+        <div class="button">
+            <button id="submit" type="submit">Send your message</button>
+        </div>
+    </form>
+    <script>
+        var output = document.getElementById("output");
+        document.getElementById("submit").onclick = checkForm;
+
+        document.getElementById("myForm").onsubmit = function () {
+            var myName = document.getElementById("name");
+            var myEmail = document.getElementById("mail");
+            var myMsg = document.getElementById("msg");
+            var rMessage = "";
+            if (myName.value === "") {
+                rMessage = "name not filled out <br>";
+            }
+            if (myEmail.value === "") {
+                rMessage = rMessage + "Email not filled out <br>";
+            }
+            if (!vEmail(myEmail.value)) {
+                rMessage = rMessage + "Not valid Email <br>";
+            }
+            if (myMsg.value === "") {
+                rMessage = rMessage + "Message not filled out";
+            }
+            if (rMessage.length > 0) {
+                output.innerHTML = rMessage;
+                return false;
+            }else {
+                return true;
+            }
+        }
+
+        function checkForm() {
+            output.innerHTML = "Clicked";
+        }
+
+        function vEmail(email) {
+            var myCk = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return myCk.test(email);
+        }
+
+    </script>
+</body>
+</html>
