@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Introduction to JavaScript</title>
+<script>
+    function confirmFunction1() {
+        //ret変数に確認ダイアログの結果を代入する。
+        ret = confirm("外部のページへ移動します。よろしいですか？");
+        //確認ダイアログの結果がOKの場合外部リンクを開く
+        if (ret == true){
+            location.href = "https://www.yahoo.co.jp/";
+        }
+    }
+</script>
+</head>
+<body>
+    <h1>JavaScript のconfirm メソッド</h1>
+    <p><button onclick="confirmFunction1()">ボタンを押して下さい</button></p>
+</body>
+</html>

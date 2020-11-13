@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Introduction to JavaScript</title>
+</had>
+<body>
+    <h1>JavaScript のconfirm メソッド</h1>
+    <dialog>
+        <p style="color: blue;">オリジナルの確認画面</p>
+        <button id="ok">OK</button>
+        <button id="cancel">Cancel</button>
+    </dialog>
+    <button id="open">オリジナルの確認画面を開く</button>
+    <script>
+        var dialog = document.querySelector('dialog');
+        var open_btn = document.getElementById('open');
+        var ok_btn = document.getElementById('ok');
+        var cancel_btn = document.getElementById('cancel');
+        open_btn.addEventListener('click', function () {
+            dialog.showModal();
+        }, false);
+        ok_btn.addEventListener('click', function () {
+            dialog.close(true);
+        }, false);
+        cancel_btn.addEventListener('click', function () {
+            dialog.close(false);
+        }, false);
+        dialog.addEventListener('close', function (event) {
+            alert(this.returnValue);
+        });
+    </script>
+</body>
+</html>

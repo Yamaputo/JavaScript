@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dialog {
+            width: 250px;
+            margin: auto;
+            margin-top: 40vh;
+            padding: 30px 20px;
+            display: none;
+            text-align: center;
+            border: 1px solid #aaa;
+            box-shadow: 2px 2px 4px #888;
+        }
+    </style>
+</head>
+<body>
+    <div id="dialog">
+        <p>ボタンをクリックしてください</p>
+        <button id="yes">はい</button>
+        <button id="no">いいえ</button>
+        <button id="cancel">キャンセル</button>
+    </div>
+     
+    <button id="btn">ボタン</button>
+<script>
+
+var dialog = document.getElementById('dialog');
+var btn = document.getElementById('btn');
+var yes = document.getElementById('yes');
+var no = document.getElementById('no');
+var cancel = document.getElementById('cancel');
+ 
+ 
+//ボタンがクリックされたらダイアログを表示する
+btn.addEventListener('click', function() {
+    dialog.style.display = 'block';
+    this.style.display = 'none';
+})
+ 
+//「はい」がクリックされたら
+yes.addEventListener('click', function(){ console.log('yes') });
+ 
+//「いいえ」がクリックされたら
+no.addEventListener('click', function(){ console.log('no') });
+ 
+//「キャンセル」がクリックされたら
+cancel.addEventListener('click', function(){ console.log('cancel') });
+</script>
+</body>
+</html>

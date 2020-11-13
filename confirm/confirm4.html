@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        dialog {
+            margin-top: 10px;
+            width: 400px;
+            border: double 10px #0000ff;
+        }
+    </style>
+</head>
+<body>
+    <dialog id="hoge">
+        <p>ダイアログの内容です。</p>
+    </dialog>
+    <p><button type="button" id="foo">開く</button></p>
+    <script>
+        // 要素の取得
+        var element = document.getElementById( "hoge" ) ;
+        // メソッドの実行
+        element.showModal() ;
+    </script>
+</body>
+</html>

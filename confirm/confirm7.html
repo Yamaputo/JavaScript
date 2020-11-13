@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Sample</title>
+	<link rel="stylesheet" href="default.css" type="text/css" media="all">
+	<link rel="stylesheet" href="alert.css" type="text/css" media="all">
+	<script type="text/javascript" src="prototype.js"></script>
+	<script type="text/javascript" src="effects.js"></script>
+	<script type="text/javascript" src="window.js"></script>
+	<script type="text/javascript">
+		function openDialog(){
+		Dialog.info("5秒後に自動的に消えます", {
+		windowParameters: {width:300, height:90},
+		showProgress: true
+		});
+		setTimeout("Dialog.closeInfo()", 5000);
+		}
+	</script>
+</head>
+<body>
+	<h1>ダイアログを閉じる</h1>
+	<form>
+	<input type="button" value="開く" onClick="openDialog()">
+	</form>
+</body>
+</html>
