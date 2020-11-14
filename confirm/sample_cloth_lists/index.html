@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="view_style.css">
+</head>
+<body>
+    
+    
+    <main>
+        <div id="simpleModal" class="modal">
+            <div class="modal-content">
+                <div class="check">
+                    <span class="bold-text">確認</span>
+                    <p>アイテムを削除してもよろしいですか？</p>
+                </div>
+                <div class="closeBtn">キャンセル</div>
+                <div class="deleteBtn">
+                    <a>削除する</a>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <div class="col text-center">
+                <a class="btn btn-danger w-75">アイテムの編集</a>
+            </div>
+            <div class="col text-center">
+                <div id="modalBtn" class="btn btn-secondary w-75 mt-3">アイテムの削除</div>
+            </div>
+        </div>
+    </main>
+    <script>
+    
+        var modal = document.getElementById('simpleModal');
+    
+        var modalBtn = document.getElementById('modalBtn');
+    
+        var closeBtn = document.getElementsByClassName('closeBtn')[0];
+    
+        modalBtn.addEventListener('click', openModal);
+    
+        closeBtn.addEventListener('click', closeModal);
+    
+        window.addEventListener('click', outsideClick);
+    
+        function openModal(){
+            modal.style.display = 'block';
+        }
+        function closeModal(){
+            modal.style.display = 'none';
+        }
+        function outsideClick(e){
+            if(e.target == modal){
+                modal.style.display = 'none';
+            }
+        }
+    
+    </script>
+</body>
+</html>
