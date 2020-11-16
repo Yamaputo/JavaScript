@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://.../">foo</a>
+    <script>
+        var css = 'a:link{color:#00f} a:visited{color:#518} a:hover{color:#f00}';
+        var style = document.createElement('style');
+        style.appendChild(document.createTextNode(css));
+        document.getElementsByTagName('head')[0].appendChild(style);
+    </script>
+</body>
+</html>

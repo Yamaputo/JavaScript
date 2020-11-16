@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #test3,
+        #test4{
+        background-color:#d8bfd8;
+        margin-bottom: 1em;
+        }
+        #test3:hover{
+        background-color: #add8e6;
+        }
+        #test4:hover{
+        background-color: #add8e6 ! important;
+        }
+    </style>
+</head>
+<body>
+    <div id="color_check">色チェック</div>
+    <div></div>
+    <div id="test3">背景が変わらない方</div>
+    <div id="test4">importantを設定した方</div>
+    <script>
+        var test3 = document.getElementById('test3');
+        var test4 = document.getElementById('test4');
+        test3.style.backgroundColor = '#d8bfd8';
+        test4.style.backgroundColor = '#d8bfd8';
+    </script>
+</body>
+</html>
